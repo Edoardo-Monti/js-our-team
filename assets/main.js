@@ -48,31 +48,26 @@ const team = [
   ];
 
   
-
+//creo un ciclo per estarre gli elementi singoli dell'array
   for(i = 0; i < team.length; i++){
-    // console.log(team[i].name)
-    // console.log(team[i].role)
-    // console.log(team[i].image)
-
+    //creo una variabile per i singoli elementi(per comodità)
     let utente = team[i]
+    //creo una variabile per le singole immagini(per comodità)
     let img = utente.image
 
-    // document.querySelector(".container").innerHTML += utente.name
-    // document.querySelector(".container").innerHTML += utente.role
-    // document.querySelector(".container").innerHTML += utente.image
-
+    //lo uso solo per la mileston1
     for(let key in utente){
         console.log(key)
         console.log(utente[key])
 
-        document.querySelector(".container").innerHTML += `
-        <div class="card">
-            <img src="./assets/img/${img}" alt="">
-            <p>${utente.name}</p>
-            <p>${utente.role}</p>
-        </div>    
-        `
-
     }
 
+    //stampo in pagina le mie card
+    document.querySelector(".container").innerHTML += `
+    <div class="card">
+        <img src="./assets/img/${img}" alt="">
+        <p>${utente.name}</p>
+        <p>${utente.role}</p>
+    </div>    
+    `
   }
