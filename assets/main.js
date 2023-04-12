@@ -50,13 +50,29 @@ const team = [
   
 
   for(i = 0; i < team.length; i++){
-    console.log(team[i].name)
-    console.log(team[i].role)
-    console.log(team[i].image)
+    // console.log(team[i].name)
+    // console.log(team[i].role)
+    // console.log(team[i].image)
 
-    document.querySelector(".container").innerHTML += team[i].name
-    document.querySelector(".container").innerHTML += team[i].role
-    document.querySelector(".container").innerHTML += team[i].image
+    let utente = team[i]
+    let img = utente.image
 
-    
+    // document.querySelector(".container").innerHTML += utente.name
+    // document.querySelector(".container").innerHTML += utente.role
+    // document.querySelector(".container").innerHTML += utente.image
+
+    for(let key in utente){
+        console.log(key)
+        console.log(utente[key])
+
+        document.querySelector(".container").innerHTML += `
+        <div class="card">
+            <img src="./assets/img/${img}" alt="">
+            <p>${utente.name}</p>
+            <p>${utente.role}</p>
+        </div>    
+        `
+
+    }
+
   }
